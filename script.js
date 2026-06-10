@@ -40,13 +40,17 @@ const glowColors = {
   "#skills":              { r: 39,  g: 103, b: 73  },
 };
 
-document.querySelectorAll("section.card[id]").forEach((section) => {
-  const color = glowColors["#" + section.id];
-  if (!color) return;
-  section.addEventListener("mouseenter", () => {
-    document.documentElement.style.setProperty("--glow-r", color.r);
-    document.documentElement.style.setProperty("--glow-g", color.g);
-    document.documentElement.style.setProperty("--glow-b", color.b);
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    const target = document.querySelector(link.getAttribute("href"));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ 
+        behavior: "smooth", 
+        block: "start" 
+      });
+    }
   });
 });
 
