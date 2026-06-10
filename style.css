@@ -804,3 +804,15 @@ body {
 @media (max-width: 48rem) {
   .card { padding: 1.25rem 1.1rem; }
   .content-wrapper { padding: 1.25rem 1rem 3rem; gap: 1rem; }
+
+
+.collapsible-header h3,
+.collapsible-header h4,
+.award-subcategory-title { 
+  color: var(--text-1) !important; 
+}
+
+  
+section.card[id] {
+  scroll-margin-top: 110px; 
+}
