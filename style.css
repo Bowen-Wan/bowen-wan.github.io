@@ -727,20 +727,20 @@ section.card[id] {
 .skill-tag > * { position: relative; z-index: 1; }
 .skill-tag span { position: relative; z-index: 1; }
 
-.skill-tag[data-color="green"]:hover::before   { background: var(--green); }
-.skill-tag[data-color="green"]:hover           { border-color: var(--green); box-shadow: 0 6px 16px var(--green-soft); }
-.skill-tag[data-color="gold"]:hover::before    { background: var(--gold); }
-.skill-tag[data-color="gold"]:hover            { border-color: var(--gold); box-shadow: 0 6px 16px var(--gold-soft); }
-.skill-tag[data-color="red"]:hover::before     { background: var(--red); }
-.skill-tag[data-color="red"]:hover             { border-color: var(--red); box-shadow: 0 6px 16px var(--red-soft); }
-.skill-tag[data-color="purple"]:hover::before  { background: var(--purple); }
-.skill-tag[data-color="purple"]:hover          { border-color: var(--purple); box-shadow: 0 6px 16px var(--purple-soft); }
-.skill-tag[data-color="teal"]:hover::before    { background: #0d9488; }
-.skill-tag[data-color="teal"]:hover            { border-color: #0d9488; box-shadow: 0 6px 16px rgba(13,148,136,0.2); }
-.skill-tag[data-color="orange"]:hover::before  { background: #c05621; }
-.skill-tag[data-color="orange"]:hover          { border-color: #c05621; box-shadow: 0 6px 16px rgba(192,86,33,0.2); }
-.skill-tag[data-color="yellow"]:hover::before  { background: #975a16; }
-.skill-tag[data-color="yellow"]:hover          { border-color: #975a16; }
+.skill-tag[data-color="green"]:active::before   { background: var(--green); }
+.skill-tag[data-color="green"]:active           { border-color: var(--green); box-shadow: 0 6px 16px var(--green-soft); }
+.skill-tag[data-color="gold"]:active::before    { background: var(--gold); }
+.skill-tag[data-color="gold"]:active            { border-color: var(--gold); box-shadow: 0 6px 16px var(--gold-soft); }
+.skill-tag[data-color="red"]:active::before     { background: var(--red); }
+.skill-tag[data-color="red"]:active             { border-color: var(--red); box-shadow: 0 6px 16px var(--red-soft); }
+.skill-tag[data-color="purple"]:active::before  { background: var(--purple); }
+.skill-tag[data-color="purple"]:active          { border-color: var(--purple); box-shadow: 0 6px 16px var(--purple-soft); }
+.skill-tag[data-color="teal"]:active::before    { background: #0d9488; }
+.skill-tag[data-color="teal"]:active            { border-color: #0d9488; box-shadow: 0 6px 16px rgba(13,148,136,0.2); }
+.skill-tag[data-color="orange"]:active::before  { background: #c05621; }
+.skill-tag[data-color="orange"]:active          { border-color: #c05621; box-shadow: 0 6px 16px rgba(192,86,33,0.2); }
+.skill-tag[data-color="yellow"]:active::before  { background: #975a16; }
+.skill-tag[data-color="yellow"]:active          { border-color: #975a16; }
 
 .site-footer {
   text-align: center;
