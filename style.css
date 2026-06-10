@@ -388,18 +388,27 @@ body {
 }
 
 
+
 .card::before {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: var(--radius);
   padding: 1px;
-  background: linear-gradient(
-    135deg,
-    transparent 0%,
-    var(--accent-glow) 50%,
-    transparent 100%
+  background: radial-gradient(
+    300px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(var(--glow-r), var(--glow-g), var(--glow-b), 0.6),
+    transparent 80%
   );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--t-med) var(--ease);
+  pointer-events: none;
+}
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
