@@ -806,9 +806,7 @@ body {
   .content-wrapper { padding: 1.25rem 1rem 3rem; gap: 1rem; }
 
 
-[data-theme="dark"] .section-toggle * {
-  color: #f5f7ff !important;
-}
-[data-theme="dark"] .collapsible-body {
-  color: #e2e8f0 !important;
+
+.section-toggle {
+  color: var(--text-1);
 }
