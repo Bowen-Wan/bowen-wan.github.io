@@ -804,5 +804,9 @@ body {
 @media (max-width: 48rem) {
   .card { padding: 1.25rem 1.1rem; }
   .content-wrapper { padding: 1.25rem 1rem 3rem; gap: 1rem; }
+
+section.card[id] {
+  scroll-margin-top: 90px;
+}
   .header-inner { padding: 1rem 1rem 0.75rem; }
 }
