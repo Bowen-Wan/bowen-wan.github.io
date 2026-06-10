@@ -40,6 +40,7 @@ const glowColors = {
   "#skills":              { r: 39,  g: 103, b: 73  },
 };
 
+
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (e) => {
     const target = document.querySelector(link.getAttribute("href"));
@@ -137,6 +138,7 @@ const navObserver = new IntersectionObserver(
 
 sections.forEach((s) => navObserver.observe(s));
 
+
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (e) => {
     const target = document.querySelector(link.getAttribute("href"));
@@ -222,7 +224,7 @@ const colorMap = {
 };
 
 skillTags.forEach((tag) => {
-  tag.addEventListener("mousedown", (e) => spawnParticles(e, e.currentTarget));
+  tag.addEventListener("mousedown", (e) => spawnParticles(e, tag));
 });
 
 function spawnParticles(e, tag) {
@@ -243,19 +245,19 @@ function spawnParticles(e, tag) {
     const size  = 4 + Math.random() * 4;
 
     Object.assign(dot.style, {
-      position:      "absolute",
-      left:          cx + "px",
-      top:           cy + "px",
-      width:         size + "px",
-      height:        size + "px",
-      borderRadius:  "50%",
-      background:    color,
-      pointerEvents: "none",
-      zIndex:        "999",
-      opacity:       "1",
-      transform:     "translate(-50%, -50%)",
-      transition:    "transform 0.55s cubic-bezier(0.2,0,0.8,1), opacity 0.55s ease",
-      willChange:    "transform, opacity",
+      position:        "absolute",
+      left:            cx + "px",
+      top:             cy + "px",
+      width:           size + "px",
+      height:          size + "px",
+      borderRadius:    "50%",
+      background:      color,
+      pointerEvents:   "none",
+      zIndex:          "999",
+      opacity:         "1",
+      transform:       "translate(-50%, -50%)",
+      transition:      "transform 0.55s cubic-bezier(0.2,0,0.8,1), opacity 0.55s ease",
+      willChange:      "transform, opacity",
     });
 
     document.body.appendChild(dot);
