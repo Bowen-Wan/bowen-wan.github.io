@@ -807,6 +807,8 @@ body {
 
 
 
-.section-toggle {
-  color: var(--text-1);
+
+.section-toggle, 
+.section-toggle * {
+  color: var(--text-1) !important;
 }
