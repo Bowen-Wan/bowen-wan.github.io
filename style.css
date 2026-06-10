@@ -775,7 +775,10 @@ section.card[id] {
 }
 
 /*addons*/
-[data-theme="dark"] .section-toggle,
-[data-theme="dark"] .section-toggle span {
-  color: #e6edf3 !important;
+
+.section-toggle span:first-child {
+  color: var(--text-1) !important;
+}
+.section-toggle:hover span:first-child {
+  color: var(--accent) !important;
 }
