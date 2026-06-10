@@ -773,3 +773,9 @@ section.card[id] {
   .card { padding: 1.25rem 1.1rem; }
   .content-wrapper { padding: 1.25rem 1rem 3rem; gap: 1rem; }
 }
+
+/*addons*/
+[data-theme="dark"] .section-toggle,
+[data-theme="dark"] .section-toggle span {
+  color: #e6edf3 !important;
+}
