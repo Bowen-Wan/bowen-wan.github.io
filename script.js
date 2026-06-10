@@ -138,12 +138,20 @@ const navObserver = new IntersectionObserver(
 
 sections.forEach((s) => navObserver.observe(s));
 
+
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (e) => {
     const target = document.querySelector(link.getAttribute("href"));
     if (target) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      const header = document.getElementById("siteHeader");
+      const headerHeight = header ? header.offsetHeight : 80;
+      const elementPosition = target.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerHeight - 20;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
   });
 });
