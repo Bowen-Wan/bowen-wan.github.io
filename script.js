@@ -224,7 +224,7 @@ const colorMap = {
 };
 
 skillTags.forEach((tag) => {
-  tag.addEventListener("mouseenter", (e) => spawnParticles(e, tag));
+  tag.addEventListener("mousedown", (e) => spawnParticles(e, tag));
 });
 
 function spawnParticles(e, tag) {
