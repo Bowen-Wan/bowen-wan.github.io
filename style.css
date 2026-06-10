@@ -579,10 +579,15 @@ body {
 }
 .section-toggle:hover { background: var(--accent-soft); color: var(--accent); }
 .section-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* ✅ REPLACE IT WITH THIS COMPACT BLOCK: */
+.section-toggle {
+  color: var(--text-1) !important;
+}
+
 .section-toggle span:first-child {
   font-size: 0.97rem;
   font-weight: 600;
-  color: inherit;
+  color: currentColor;
 }
 .toggle-icon {
   width: 20px; height: 20px;
@@ -806,9 +811,3 @@ body {
   .content-wrapper { padding: 1.25rem 1rem 3rem; gap: 1rem; }
 
 
-
-
-.section-toggle, 
-.section-toggle * {
-  color: var(--text-1) !important;
-}
