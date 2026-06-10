@@ -269,3 +269,10 @@ function spawnParticles(e, tag) {
     setTimeout(() => dot.remove(), 600);
   }
 }
+
+
+
+const skillTags = document.querySelectorAll(".skill-tag");
+skillTags.forEach((tag) => {
+  tag.addEventListener("mousedown", (e) => spawnParticles(e, e.currentTarget));
+});
