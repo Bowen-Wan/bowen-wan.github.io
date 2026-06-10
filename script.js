@@ -1,16 +1,11 @@
-
-
 "use strict";
 
-
 document.getElementById("year").textContent = new Date().getFullYear();
-
 
 const cursorGlow = document.getElementById("cursorGlow");
 let mouse = { x: 0, y: 0 };
 let glowPos = { x: 0, y: 0 };
 let glowRAF;
-
 
 function animateGlow() {
   const speed = 0.1;
@@ -27,7 +22,7 @@ document.addEventListener("mousemove", (e) => {
 
   if (!cursorGlow.classList.contains("visible")) {
     cursorGlow.classList.add("visible");
-    glowPos = { x: e.clientX, y: e.clientY }; // snap on first show
+    glowPos = { x: e.clientX, y: e.clientY };
     animateGlow();
   }
 });
@@ -36,7 +31,6 @@ document.addEventListener("mouseleave", () => {
   cursorGlow.classList.remove("visible");
   cancelAnimationFrame(glowRAF);
 });
-
 
 const glowColors = {
   "#contact-information": { r: 43,  g: 108, b: 176 },
@@ -56,11 +50,9 @@ document.querySelectorAll("section.card[id]").forEach((section) => {
   });
 });
 
-
 const html        = document.documentElement;
 const themeToggle = document.getElementById("themeToggle");
 const themeIcon   = document.getElementById("themeIcon");
-
 
 const systemPref = window.matchMedia("(prefers-color-scheme: dark)").matches
   ? "dark" : "light";
@@ -88,11 +80,8 @@ window.addEventListener("scroll", () => {
   const scrolled = window.scrollY;
   const total    = document.documentElement.scrollHeight - window.innerHeight;
   progressBar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + "%";
-
-
   siteHeader.classList.toggle("scrolled", scrolled > 20);
 }, { passive: true });
-
 
 const cards = document.querySelectorAll(".card");
 
@@ -113,31 +102,16 @@ cards.forEach((card, i) => {
   entranceObserver.observe(card);
 });
 
-
-const TILT_MAX = 6; // degrees
-
 cards.forEach((card) => {
   card.addEventListener("mousemove", (e) => {
-    const rect   = card.getBoundingClientRect();
-    const cx     = rect.left + rect.width  / 2;
-    const cy     = rect.top  + rect.height / 2;
-    const dx     = (e.clientX - cx) / (rect.width  / 2); // -1 to +1
-    const dy     = (e.clientY - cy) / (rect.height / 2); // -1 to +1
-    const tiltX  = -dy * TILT_MAX;
-    const tiltY  =  dx * TILT_MAX;
-    card.style.transform = `perspective(900px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-3px)`;
-  });
-
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "";
-    card.style.transition = "transform 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.28s cubic-bezier(0.4,0,0.2,1)";
-  });
-
-  card.addEventListener("mouseenter", () => {
-    card.style.transition = "transform 0.12s linear, box-shadow 0.28s cubic-bezier(0.4,0,0.2,1)";
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
   });
 });
-
 
 const navLinks = document.querySelectorAll(".main-nav a");
 const sections = document.querySelectorAll("section[id]");
@@ -160,7 +134,6 @@ const navObserver = new IntersectionObserver(
 
 sections.forEach((s) => navObserver.observe(s));
 
-
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (e) => {
     const target = document.querySelector(link.getAttribute("href"));
@@ -171,8 +144,6 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 
-
-// Set initial max-heights so CSS transitions work
 document.querySelectorAll(".collapsible-body").forEach((body) => {
   body.style.maxHeight = body.scrollHeight + 100 + "px";
 });
@@ -193,13 +164,11 @@ document.querySelectorAll(".section-toggle").forEach((toggle) => {
       });
       toggle.setAttribute("aria-expanded", "false");
     } else {
-    
       body.style.maxHeight = body.scrollHeight + 100 + "px";
       body.classList.remove("closed");
       toggle.setAttribute("aria-expanded", "true");
     }
   });
-
 
   toggle.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
@@ -208,7 +177,6 @@ document.querySelectorAll(".section-toggle").forEach((toggle) => {
     }
   });
 });
-
 
 const toast     = document.getElementById("copyToast");
 let   toastTimer;
@@ -230,9 +198,7 @@ function showToast(message) {
   toastTimer = setTimeout(() => toast.classList.remove("show"), 2400);
 }
 
-
 const skillTags = document.querySelectorAll(".skill-tag");
-
 
 const colorMap = {
   blue:   "#2b6cb0",
@@ -260,7 +226,6 @@ function spawnParticles(e, tag) {
     const dot = document.createElement("span");
     dot.className = "particle";
 
-    
     const angle = (Math.PI * 2 * i) / count + (Math.random() - 0.5) * 0.6;
     const dist  = 28 + Math.random() * 22;
     const tx    = Math.cos(angle) * dist;
@@ -285,12 +250,10 @@ function spawnParticles(e, tag) {
 
     document.body.appendChild(dot);
 
-
     requestAnimationFrame(() => {
       dot.style.transform = `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px))`;
       dot.style.opacity   = "0";
     });
-
 
     setTimeout(() => dot.remove(), 600);
   }
