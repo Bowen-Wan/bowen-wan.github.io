@@ -719,15 +719,12 @@ section.card[id] {
 }
 .skill-tag:active::before { transform: scale(1); }
 .skill-tag:active {
-  border-color: var(--acent); /* Use your specific color variable */
+  color: #fff;
+  border-color: var(--accent); /* Use your specific color variable */
   box-shadow: 0 6px 16px var(--active-shadow-color);
   transform: translateY(-3px) scale(1.04)
 }
-.skill-tag:hover {
-  color: #fff;
-  border-color: var(--accent);
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 6px 16px var(--accent-glow);
+
 }
 .skill-tag > * { position: relative; z-index: 1; }
 .skill-tag span { position: relative; z-index: 1; }
