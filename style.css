@@ -371,7 +371,7 @@ section.card[id] {
   transform: translateY(0);
 }
 
-/* SYNTAX ERROR FIXED HERE */
+
 .card::before {
   content: '';
   position: absolute;
@@ -531,7 +531,6 @@ section.card[id] {
 .badge-green  { background: var(--green-soft);  color: var(--green);  border: 1px solid rgba(39,103,73,0.18); }
 .badge-gold   { background: var(--gold-soft);   color: var(--gold);   border: 1px solid rgba(183,121,31,0.22); }
 
-/* AWARDS SECTION TEXT COLOR FIX */
 .section-toggle {
   display: flex;
   align-items: center;
@@ -542,12 +541,12 @@ section.card[id] {
   border: none;
   background: transparent;
   font-family: inherit;
+  color: var(--text-1); 
   cursor: pointer;
   border-radius: var(--radius-sm);
   text-align: left;
   transition: background var(--t-fast) var(--ease),
               color      var(--t-fast) var(--ease);
-  color: var(--text-1) !important;
 }
 .section-toggle:hover { background: var(--accent-soft); color: var(--accent) !important; }
 .section-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
