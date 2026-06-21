@@ -361,7 +361,6 @@ body {
   z-index: 1;
 }
 
-
 section.card[id] {
   scroll-margin-top: 110px;
 }
@@ -386,7 +385,6 @@ section.card[id] {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 .card::before {
   content: '';
@@ -724,7 +722,7 @@ section.card[id] {
   border: 1px solid var(--border);
   background: var(--surface-2);
   color: var(--text-2);
-  cursor: pointer; /* Change this to pointer */
+  cursor: pointer;
   user-select: none;
   position: relative;
   overflow: hidden;
@@ -795,7 +793,6 @@ section.card[id] {
   }
   body { background: #fff; color: #111; }
 }
-
 
 @media (max-width: 48rem) {
   .card { padding: 1.25rem 1.1rem; }
